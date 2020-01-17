@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历史上的今天</title>
+</head>
+<body>
+
+<!-- 历史上的今天 -->
+
+<script language="javascript">
+　var Today=new Date();
+　document.write("今天日期是 " + Today.getFullYear()+ " 年 " + (Today.getMonth()+1) + " 月 " + Today.getDate() + " 日");
+</script>
+
+<table border="1">
+{% if event_list %}
+
+    <tr> <th>日期</th> <th>事件</th> </tr>
+    {% for event_item in event_list %}
+        <tr> <th>{{ event_item.event_date}}</th> <th> {{ event_item.event_text}}</th> </tr>
+    {% endfor %}
+
+</table>
+{% endif %}
+
+<!-- 每月的统计 -->
+<h1>{{ 每月大事 }}</h1>
+<ul>
+    {% for i in month_list %}
+        <li>
+            <a href="{% url 'month_query' i %}"> {{i}}月 </a>
+        </li>
+    {% endfor %}
+</ul>
+
+<!-- 每年的统计 -->
+
+</body>
+</html>

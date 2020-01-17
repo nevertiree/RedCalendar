@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>每月大事</title>
+</head>
+<body>
+
+<table border="1">
+{% if event_list %}
+
+    <tr> <th>日期</th> <th>事件</th> </tr>
+    {% for event_item in event_list %}
+        <tr> <th>{{ event_item.event_date}}</th> <th> {{ event_item.event_text}}</th> </tr>
+    {% endfor %}
+
+</table>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+</body>
+</html>
