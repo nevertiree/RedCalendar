@@ -10,3 +10,7 @@ Django + MySQL
 ```
 
 `red_calendar`是用`django-admin startproject red_calendar`生成的
+
+超级用户`admin`，密码`123456`
+
+引入了`FullCalendar`插件，在首页直接展示
